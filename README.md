@@ -2,7 +2,7 @@
 
 A terminal user interface for displaying information about a bike cadence sensor that connects via Bluetooth.
 
-# Installation
+### Installation
 To install from pypi:
 ```
 pip3 install --user cycling-cadence-display
@@ -14,7 +14,7 @@ Note: the package `gnuplot` must be installed separately on the host where this 
 sudo apt install gnuplot
 ```
 
-# Running the app
+### Running the app
 
 ```
 > cycling_cadence_display --help
@@ -25,14 +25,14 @@ optional arguments:
     --device-address DEVICE_ADDRESS
 ```
 
-# Development
+### Development
 ```
 # create a virtualenv and start using it
 python3 -m venv venv
 . venv/bin/activate
 
 # install the dependencies etc.
-python3 seetup.py develop
+python3 setup.py develop
 
 
 # run the test-suite
