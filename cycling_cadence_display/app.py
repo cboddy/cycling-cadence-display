@@ -42,8 +42,8 @@ class CycleContext:
         cumulative_crank_revs = event.cumulative_crank_revs
         last_crank_event_time = event.last_crank_event_time
 
-        if self.cumulative_crank_revs == cumulative_crank_revs and self.last_crank_event_time == last_crank_event_time:
-            # duplicate event - ignore
+        if self.cumulative_crank_revs >= cumulative_crank_revs or self.last_crank_event_time >= last_crank_event_time:
+            # duplicate or out-of-order BLE event - ignore
             return
 
         self.cumulative_crank_revs = cumulative_crank_revs

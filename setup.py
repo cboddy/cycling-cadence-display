@@ -9,7 +9,7 @@ def get_long_description():
 
 setup(
     name='cycling-cadence-display',
-    version='0.21.0',
+    version='0.1.0',
     packages=find_packages(),
     author='Chris Boddy',
     author_email='chris@boddy.im',
