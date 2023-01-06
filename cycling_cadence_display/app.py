@@ -76,7 +76,8 @@ class CycleContext:
             return an iterable of renderable objects, in this case
             just one `str`.
             """
-            # __rich_console__ get's called more than once so cache the result
+            # __rich_console__ get's called more than once so cache the result. Otherwise it cats
+            # together the plots as many times as __rich_console__ is called
             if fig.string_cache is None:
                 fig.plot(
                     x_vals, self.instant_rpm.values, width=console.max_width, height=console.max_height, xlabel="mins"
