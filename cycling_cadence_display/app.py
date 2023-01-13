@@ -53,6 +53,10 @@ class CycleContext:
             "cumulative_crank_revs": cumulative_crank_revs,
             "last_crank_event_time": last_crank_event_time / 1000,
         }
+
+        if len(self.measurements) < 2:
+            return
+
         self.diff = self.measurements.diff().tail(-1).ffill()
         self.instant_rpm = (self.diff["cumulative_crank_revs"] / self.diff["last_crank_event_time"] * 60).ffill()
 
